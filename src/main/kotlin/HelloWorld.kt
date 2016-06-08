@@ -10,6 +10,11 @@ fun main(args: Array<String>) {
     val greetingCopy = greeting.copy()
     println("new greeting copy: $greetingCopy")
 
+    val list = listOf(7, 5, 3, 2)
+    list.reversed()
+    val newList = list.sortedBy { it % 3 }
+    println("newList $newList");
+
     println(sum(2, 3))
     printSum(5, 9)
     println()
