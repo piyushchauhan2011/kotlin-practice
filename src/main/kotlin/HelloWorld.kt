@@ -53,6 +53,13 @@ fun main(args: Array<String>) {
 
     val tuple = Triple("Piyush", 25, 98.5)
     println(tuple)
+
+    val people = listOf(Person("Piyush", 26), Person("Mithun", 25), Person("Kartikey", 24))
+    val sortedPeople = people.sorted()
+    println(sortedPeople)
+
+    val sortedByPeople = people.sortedBy { -it.age }
+    println(sortedByPeople)
 }
 
 object Resource {
