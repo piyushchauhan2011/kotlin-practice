@@ -65,6 +65,10 @@ fun main(args: Array<String>) {
 
     val sortedByPeople = people.sortedBy { -it.age }
     println(sortedByPeople)
+
+    val strings = listOf("Piyush", "Kartikey", "Mithun")
+    val result = strings.maxBy { it.length }
+    println("result $result")
 }
 
 object Resource {
