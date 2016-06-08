@@ -7,6 +7,9 @@ fun main(args: Array<String>) {
     val greeting = Greeting("Piyush", 25);
     println(greeting)
 
+    val greetingCopy = greeting.copy()
+    println("new greeting copy: $greetingCopy")
+
     println(sum(2, 3))
     printSum(5, 9)
     println()
@@ -42,6 +45,9 @@ fun main(args: Array<String>) {
     println(point)
 
     println("Resource ${Resource.name}")
+
+    val tuple = Triple("Piyush", 25, 98.5)
+    println(tuple)
 }
 
 object Resource {
