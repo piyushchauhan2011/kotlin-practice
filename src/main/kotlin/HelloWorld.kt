@@ -2,6 +2,14 @@
  * Created by piyushchauhan on 7/06/2016.
  */
 
+//fun <T> maxH(collection: Collection<T>, less: (T, T) -> Boolean): T? {
+//    var max: T? = null
+//    for (it in collection)
+//        if (max == null || less(max, it))
+//            max = it
+//    return max
+//}
+
 fun main(args: Array<String>) {
     println("Hello, World!")
     val greeting = Greeting("Piyush", 25);
@@ -69,6 +77,8 @@ fun main(args: Array<String>) {
     val strings = listOf("Piyush", "Kartikey", "Mithun")
     val result = strings.maxBy { it.length }
     println("result $result")
+
+    // maxH(strings, { a, b -> a.length() < b.length() })
 }
 
 object Resource {
