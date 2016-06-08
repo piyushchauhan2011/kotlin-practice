@@ -7,6 +7,11 @@ fun main(args: Array<String>) {
     val greeting = Greeting("Piyush", 25);
     println(greeting)
 
+    val anotherGreeting = greeting.copy(name = "Kartikey")
+    anotherGreeting.age = 23
+    println("another greeting $anotherGreeting")
+    println("original greeting unchanged $greeting")
+
     val greetingCopy = greeting.copy()
     println("new greeting copy: $greetingCopy")
 
