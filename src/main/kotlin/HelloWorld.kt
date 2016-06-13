@@ -2,13 +2,13 @@
  * Created by piyushchauhan on 7/06/2016.
  */
 
-//fun <T> maxH(collection: Collection<T>, less: (T, T) -> Boolean): T? {
-//    var max: T? = null
-//    for (it in collection)
-//        if (max == null || less(max, it))
-//            max = it
-//    return max
-//}
+fun <T> maxH(collection: Collection<T>, less: (T, T) -> Boolean): T? {
+    var max: T? = null
+    for (it in collection)
+        if (max == null || less(max, it))
+            max = it
+    return max
+}
 
 fun main(args: Array<String>) {
     println("Hello, World!")
@@ -78,7 +78,8 @@ fun main(args: Array<String>) {
     val result = strings.maxBy { it.length }
     println("result $result")
 
-    // maxH(strings, { a, b -> a.length() < b.length() })
+    val maxString = maxH(strings, { a, b -> a.length < b.length })
+    println("maxString $maxString")
 }
 
 object Resource {
