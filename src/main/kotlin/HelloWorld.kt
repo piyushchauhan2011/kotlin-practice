@@ -80,6 +80,10 @@ fun main(args: Array<String>) {
 
     val maxString = maxH(strings, { a, b -> a.length < b.length })
     println("maxString $maxString")
+
+    var me = BruceWayne(Batman(), RichyRich())
+    me.inWater()
+    print("Is awesomely rich? ${me.isAwesomelyRich()}")
 }
 
 object Resource {
@@ -105,3 +109,43 @@ fun cases(obj: Any): Unit {
         else -> println("Unknown")
     }
 }
+
+interface Superpower {
+    fun inWater()
+    fun onAir()
+    fun onSoil()
+}
+
+interface Wealth {
+    fun isAwesomelyRich(): Boolean
+}
+
+class Batman(): Superpower {
+    companion object {
+        fun create() = Batman()
+    }
+
+    override fun inWater() {
+        println("Ack, cannot swim")
+    }
+
+    override fun onAir() {
+        println("Requires vehicle")
+    }
+
+    override fun onSoil() {
+        println("Awesome")
+    }
+
+    fun isFun(): Boolean {
+        return false
+    }
+}
+
+class RichyRich : Wealth {
+    override fun isAwesomelyRich(): Boolean {
+        return true
+    }
+}
+
+class BruceWayne(a: Batman, b: RichyRich) : Superpower by a, Wealth by b
