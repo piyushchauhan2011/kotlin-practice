@@ -1,6 +1,9 @@
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
 
 /**
  * Created by piyushchauhan on 7/06/2016.
@@ -99,6 +102,10 @@ fun main(args: Array<String>) {
     println(mapper.writeValueAsString(expected))
     val stateObj = mapper.readValue<ClassWithPair>(json)
     println(stateObj)
+
+    val doc: Document = Jsoup.connect("http://en.wikipedia.org/").get();
+    val newsHeadlines: Elements = doc.select("#mp-itn b a");
+    println(newsHeadlines)
 }
 
 object Resource {
