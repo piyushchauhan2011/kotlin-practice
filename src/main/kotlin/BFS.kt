@@ -1,3 +1,20 @@
+/**
+Graph
+9 7
+0 1
+1 2
+1 3
+2 3
+3 4
+6 7
+6 8
+
+Result
+u: 0 and [Node(color=BLACK, distance=0, parent=-1), Node(color=BLACK, distance=1, parent=1), Node(color=BLACK, distance=2, parent=2), Node(color=BLACK, distance=2, parent=3), Node(color=BLACK, distance=3, parent=4)]
+u: 6 and [Node(color=BLACK, distance=0, parent=-1), Node(color=BLACK, distance=1, parent=7), Node(color=BLACK, distance=1, parent=8)]
+u: 5 and [Node(color=BLACK, distance=0, parent=-1)]
+ */
+
 data class Node(var color: Color, var distance: Int = Int.MAX_VALUE, var parent: Int = -1);
 
 var nodes: MutableList<Node> = mutableListOf()

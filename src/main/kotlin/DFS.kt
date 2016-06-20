@@ -1,3 +1,21 @@
+/**
+Graph
+9 7
+0 1
+1 2
+1 3
+2 3
+3 4
+6 7
+6 8
+
+Result
+Component 1 0 1 2 3 4
+Component 2 5
+Component 3 6 7 8
+There are 3 connected components
+ */
+
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
