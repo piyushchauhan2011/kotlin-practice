@@ -1,3 +1,5 @@
+import java.util.*
+
 /**
 Graph
 9 7
@@ -21,7 +23,7 @@ var nodes: MutableList<Node> = mutableListOf()
 
 fun bfs(u: Int) {
     val queue = mutableListOf<Int>()
-
+//    val tmp: MutableList<Node> = Collections.nCopies(10, Node(Color.WHITE))
     nodes[u].distance = 0
     queue.add(u)
 
