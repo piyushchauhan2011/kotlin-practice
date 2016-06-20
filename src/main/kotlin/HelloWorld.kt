@@ -1,3 +1,7 @@
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
+
 /**
  * Created by piyushchauhan on 7/06/2016.
  */
@@ -9,6 +13,8 @@ fun <T> maxH(collection: Collection<T>, less: (T, T) -> Boolean): T? {
             max = it
     return max
 }
+
+data class ClassWithPair(val name: Pair<String, String>, val age: Int)
 
 fun main(args: Array<String>) {
     println("Hello, World!")
@@ -84,6 +90,15 @@ fun main(args: Array<String>) {
     var me = BruceWayne(Batman(), RichyRich())
     me.inWater()
     print("Is awesomely rich? ${me.isAwesomelyRich()}")
+
+    val mapper: ObjectMapper = jacksonObjectMapper()
+
+    val json = """{"name":{"first":"John","second":"Smith"},"age":30}"""
+    val expected = ClassWithPair(Pair("John", "Smith"), 30)
+
+    println(mapper.writeValueAsString(expected))
+    val stateObj = mapper.readValue<ClassWithPair>(json)
+    println(stateObj)
 }
 
 object Resource {
