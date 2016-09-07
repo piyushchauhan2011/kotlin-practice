@@ -5,10 +5,6 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 
-/**
- * Created by piyushchauhan on 7/06/2016.
- */
-
 fun <T> maxH(collection: Collection<T>, less: (T, T) -> Boolean): T? {
     var max: T? = null
     for (it in collection)
@@ -21,7 +17,7 @@ data class ClassWithPair(val name: Pair<String, String>, val age: Int)
 
 fun main(args: Array<String>) {
     println("Hello, World!")
-    val greeting = Greeting("Piyush", 25);
+    val greeting = Greeting("Piyush", 25)
     println(greeting)
 
     val anotherGreeting = greeting.copy(name = "Kartikey")
@@ -35,7 +31,7 @@ fun main(args: Array<String>) {
     val list = listOf(7, 5, 3, 2)
     list.reversed()
     val newList = list.sortedBy { it % 3 }
-    println("newList $newList");
+    println("newList $newList")
 
     println(sum(2, 3))
     printSum(5, 9)
@@ -90,7 +86,7 @@ fun main(args: Array<String>) {
     val maxString = maxH(strings, { a, b -> a.length < b.length })
     println("maxString $maxString")
 
-    var me = BruceWayne(Batman(), RichyRich())
+    val me = BruceWayne(Batman(), RichyRich())
     me.inWater()
     print("Is awesomely rich? ${me.isAwesomelyRich()}")
 
@@ -103,8 +99,8 @@ fun main(args: Array<String>) {
     val stateObj = mapper.readValue<ClassWithPair>(json)
     println(stateObj)
 
-    val doc: Document = Jsoup.connect("http://en.wikipedia.org/").get();
-    val newsHeadlines: Elements = doc.select("#mp-itn b a");
+    val doc: Document = Jsoup.connect("http://en.wikipedia.org/").get()
+    val newsHeadlines: Elements = doc.select("#mp-itn b a")
     println(newsHeadlines)
 }
 
@@ -143,9 +139,9 @@ interface Wealth {
 }
 
 class Batman(): Superpower {
-    companion object {
-        fun create() = Batman()
-    }
+//    companion object {
+//        fun create() = Batman()
+//    }
 
     override fun inWater() {
         println("Ack, cannot swim")
@@ -159,9 +155,9 @@ class Batman(): Superpower {
         println("Awesome")
     }
 
-    fun isFun(): Boolean {
-        return false
-    }
+//    fun isFun(): Boolean {
+//        return false
+//    }
 }
 
 class RichyRich : Wealth {
